@@ -24,8 +24,16 @@ def odd_indices(lst):
             odd_index_lst.append(lst[i])
     return odd_index_lst
 
+def exponents(bases, powers):
+    results = []
+    for i in range(len(bases)):
+        for j in range(len(powers)):
+            results.append(bases[i] ** powers[j])
+    return results
+
 
 print(divisible_by_ten([20, 25, 30, 35, 40]))
 print(add_greetings(["Tom", "Dick", "Harry"]))
 print(delete_starting_evens([4, 8, 10, 11, 12, 15]))
 print(odd_indices([4, 3, 7, 10, 11, -2]))
+print(exponents([2, 3, 4], [1, 2, 3]))
