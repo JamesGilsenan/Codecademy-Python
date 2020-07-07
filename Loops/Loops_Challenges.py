@@ -58,6 +58,14 @@ def max_num(nums):
             max = num
     return max
 
+def same_values(lst1, lst2):
+    matches = []
+    for i in range(len(lst1)):
+        if lst1[i] == lst2[i]:
+            matches.append(i)
+    return matches
+
+
 print(divisible_by_ten([20, 25, 30, 35, 40]))
 print(add_greetings(["Tom", "Dick", "Harry"]))
 print(delete_starting_evens([4, 8, 10, 11, 12, 15]))
@@ -66,3 +74,4 @@ print(exponents([2, 3, 4], [1, 2, 3]))
 print(larger_sum([1, 9, 5], [2, 3, 7]))
 print(over_nine_thousand([8000, 900, 120, 5000]))
 print(max_num([50, -10, 0, 75, 20]))
+print(same_values([5, 1, -10, 3, 3], [5, 10, -10, 3, 5]))
