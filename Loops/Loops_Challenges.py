@@ -31,9 +31,21 @@ def exponents(bases, powers):
             results.append(bases[i] ** powers[j])
     return results
 
+def larger_sum(lst1, lst2):
+    total1 = 0
+    total2 = 0
+    for i in range(len(lst1)):
+        total1 += lst1[i]
+    for j in range(len(lst2)):
+        total2 += lst2[j]
+    if total2 > total1:
+        return lst2
+    else:
+        return lst1
 
 print(divisible_by_ten([20, 25, 30, 35, 40]))
 print(add_greetings(["Tom", "Dick", "Harry"]))
 print(delete_starting_evens([4, 8, 10, 11, 12, 15]))
 print(odd_indices([4, 3, 7, 10, 11, -2]))
 print(exponents([2, 3, 4], [1, 2, 3]))
+print(larger_sum([1, 9, 5], [2, 3, 7]))
