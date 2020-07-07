@@ -65,6 +65,18 @@ def same_values(lst1, lst2):
             matches.append(i)
     return matches
 
+def reversed_list(lst1, lst2):
+    if len(lst1) == 0 and len(lst2) == 0:
+        return True
+    for i in range(len(lst1)):
+        print("Comparing " + str(lst1[i]) + " and " + str(lst2[len(lst2) - i - 1]))
+        if lst1[i] == lst2[len(lst2) - i - 1] and i == len(lst1) - 1:
+            print("Lists are a reversed copy of each other")
+            return True
+        elif lst1[i] != lst2[len(lst2) - i - 1]:
+            print("Lists are not a reversed copy")
+            return False
+
 
 print(divisible_by_ten([20, 25, 30, 35, 40]))
 print(add_greetings(["Tom", "Dick", "Harry"]))
@@ -75,3 +87,5 @@ print(larger_sum([1, 9, 5], [2, 3, 7]))
 print(over_nine_thousand([8000, 900, 120, 5000]))
 print(max_num([50, -10, 0, 75, 20]))
 print(same_values([5, 1, -10, 3, 3], [5, 10, -10, 3, 5]))
+print(reversed_list([1, 2, 3], [3, 2, 1]))
+print(reversed_list([1, 5, 3], [3, 2, 1]))
