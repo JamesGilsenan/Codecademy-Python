@@ -61,4 +61,7 @@ for m in possible_ms:
 print("Best m value: " + str(best_m))
 print("Best b value: " + str(best_b))
 print("Smallest error: " + str(smallest_error))
-print(datapoints)
+
+#after finding best_m, best_b and smallest error, what is the predicted bounce of width x to be? If x = 6:
+#user can now enter the width(x) of the ball and get_y will calculate the height of the bounce
+print(get_y(best_m, best_b, 6))
