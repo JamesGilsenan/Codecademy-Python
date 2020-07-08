@@ -44,3 +44,21 @@ print(calculate_all_error(1, -1, datapoints))
 # 1 + 5 + 9 + 3 = 18
 datapoints = [(1, 1), (3, 3), (5, 5), (-1, -1)]
 print(calculate_all_error(-1, 1, datapoints))
+
+datapoints = [(1, 2), (2, 0), (3, 4), (4, 4), (5, 3)]
+possible_ms = [m * 0.1 for m in range(-100, 101, 1)]
+possible_bs = [b * 0.1 for b in range(-200, 201, 1)]
+smallest_error = float("inf")
+best_m = 0
+best_b = 0
+
+for m in possible_ms:
+    for b in possible_bs:
+        if calculate_all_error(m, b, datapoints) < smallest_error:
+            best_m = m
+            best_b = b
+            smallest_error = calculate_all_error(m, b, datapoints)
+print("Best m value: " + str(best_m))
+print("Best b value: " + str(best_b))
+print("Smallest error: " + str(smallest_error))
+print(datapoints)
