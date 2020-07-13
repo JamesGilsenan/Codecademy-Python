@@ -115,5 +115,10 @@ print(daily_transactions)
 daily_transactions_split = []
 for transaction in daily_transactions:
     daily_transactions_split.append(transaction.split("|"))
-
 print(daily_transactions_split)
+
+transactions_clean = []
+for transaction in daily_transactions_split:
+    for data in transaction:
+        transactions_clean.append(data.strip())
+print(transactions_clean)
