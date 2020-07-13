@@ -110,15 +110,31 @@ daily_sales_replaced = daily_sales.replace(";,;", "|")
 
 daily_transactions = []
 daily_transactions = daily_sales_replaced.split(",")
-print(daily_transactions)
+#print(daily_transactions)
 
 daily_transactions_split = []
 for transaction in daily_transactions:
     daily_transactions_split.append(transaction.split("|"))
-print(daily_transactions_split)
+#print(daily_transactions_split)
 
 transactions_clean = []
 for transaction in daily_transactions_split:
+    transaction_clean = []
     for data in transaction:
-        transactions_clean.append(data.strip())
+        transaction_clean.append(data.replace("\n", "").strip())
+        transactions_clean.append(transaction_clean)
 print(transactions_clean)
+
+
+
+customers = []
+sales = []
+thread_sold = []
+for transaction in transaction_clean:
+    customers.append(transaction[0])
+    sales.append(transaction[1])
+    thread_sold.append(transaction[2])
+print("\n\n Customers")
+#print(customers)
+#print(sales)
+#print(thread_sold)
