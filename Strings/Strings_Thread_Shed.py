@@ -132,15 +132,21 @@ for transaction in transactions_clean:
     customers.append(transaction[0])
     sales.append(transaction[1])
     thread_sold.append(transaction[2])
-print("\nCustomers")
-print(customers)
-print("\nSales")
-print(sales)
-print("\nThread Sold")
-print(thread_sold)
+#print("\nCustomers")
+#print(customers)
+#print("\nSales")
+#print(sales)
+#print("\nThread Sold")
+#print(thread_sold)
 
 total_sold = 0
 for sale in sales:
     sale = sale.replace("$", "")
     total_sold += float(sale)
 print(total_sold)
+
+thread_sold_split = []
+for thread in thread_sold:
+    for colour in thread.split("&"):
+        thread_sold_split.append(colour)
+print(thread_sold_split)
