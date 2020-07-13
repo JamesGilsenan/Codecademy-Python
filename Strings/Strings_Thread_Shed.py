@@ -123,18 +123,18 @@ for transaction in daily_transactions_split:
     for data in transaction:
         transaction_clean.append(data.replace("\n", "").strip())
         transactions_clean.append(transaction_clean)
-print(transactions_clean)
-
-
+#print(transactions_clean)
 
 customers = []
 sales = []
 thread_sold = []
-for transaction in transaction_clean:
+for transaction in transactions_clean:
     customers.append(transaction[0])
     sales.append(transaction[1])
     thread_sold.append(transaction[2])
-print("\n\n Customers")
-#print(customers)
-#print(sales)
-#print(thread_sold)
+print("\nCustomers")
+print(customers)
+print("\nSales")
+print(sales)
+print("\nThread Sold")
+print(thread_sold)
