@@ -138,3 +138,9 @@ print("\nSales")
 print(sales)
 print("\nThread Sold")
 print(thread_sold)
+
+total_sold = 0
+for sale in sales:
+    sale = sale.replace("$", "")
+    total_sold += float(sale)
+print(total_sold)
