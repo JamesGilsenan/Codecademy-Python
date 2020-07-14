@@ -158,4 +158,8 @@ def colour_count(colour):
     return count
 
 print(colour_count("white"))
-#print(112/28)
+colours = ['red','yellow','green','white','black','blue','purple']
+
+print("Thread sold in order of colour")
+for i in range(len(colours)):
+    print(colours[i] + ": {red}".format(red = colour_count(colours[i])))
