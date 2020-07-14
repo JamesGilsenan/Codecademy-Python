@@ -122,7 +122,7 @@ for transaction in daily_transactions_split:
     for data_point in transaction:
         transaction_clean.append(data_point.replace("\n", "").strip(" "))
     transactions_clean.append(transaction_clean)
-print(transactions_clean)
+#print(transactions_clean)
 
 customers = []
 sales = []
