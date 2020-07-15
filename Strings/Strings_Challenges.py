@@ -55,6 +55,14 @@ def reverse_string(word):
     word_reversed += word[len(word) - i - 1]
   return word_reversed
 
+def make_spoonerism(word1, word2):
+  char1 = word1[0]
+  char2 = word2[0]
+  word1 = word1.replace(word1[0], char2)
+  word2 = word2.replace(word2[0], char1)
+  spoonerism = word1 + " " + word2
+  return spoonerism
+
 #print(unique_english_letters("mississippi"))
 # should print 4
 #print(unique_english_letters("Apple"))
@@ -87,16 +95,23 @@ def reverse_string(word):
 #print(check_for_name("My name is Samantha", "Jamie"))
 # should print False
 
-print(every_other_letter("Codecademy"))
+#print(every_other_letter("Codecademy"))
 # should print Cdcdm
-print(every_other_letter("Hello world!"))
+#print(every_other_letter("Hello world!"))
 # should print Hlowrd
-print(every_other_letter(""))
+#print(every_other_letter(""))
 # should print 
 
-print(reverse_string("Codecademy"))
+#print(reverse_string("Codecademy"))
 # should print ymedacedoC
-print(reverse_string("Hello world!"))
+#print(reverse_string("Hello world!"))
 # should print !dlrow olleH
-print(reverse_string(""))
+#print(reverse_string(""))
 # should print
+
+print(make_spoonerism("Codecademy", "Learn"))
+# should print Lodecademy Cearn
+print(make_spoonerism("Hello", "world!"))
+# should print wello Horld!
+print(make_spoonerism("a", "b"))
+# should print b a
