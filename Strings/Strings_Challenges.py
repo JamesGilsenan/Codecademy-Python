@@ -43,6 +43,13 @@ def check_for_name(sentence, name):
     else:
       return False
 
+def every_other_letter(word):
+  every_other = ""
+  for i in range(0, len(word), 2):
+    every_other += word[i]
+  return every_other
+
+
 #print(unique_english_letters("mississippi"))
 # should print 4
 #print(unique_english_letters("Apple"))
@@ -68,9 +75,16 @@ def check_for_name(sentence, name):
 #print(x_length_words("he likes apples", 2))
 # should print True
 
-print(check_for_name("My name is Jamie", "Jamie"))
+#print(check_for_name("My name is Jamie", "Jamie"))
 # should print True
-print(check_for_name("My name is jamie", "Jamie"))
+#print(check_for_name("My name is jamie", "Jamie"))
 # should print True
-print(check_for_name("My name is Samantha", "Jamie"))
+#print(check_for_name("My name is Samantha", "Jamie"))
 # should print False
+
+print(every_other_letter("Codecademy"))
+# should print Cdcdm
+print(every_other_letter("Hello world!"))
+# should print Hlowrd
+print(every_other_letter(""))
+# should print 
