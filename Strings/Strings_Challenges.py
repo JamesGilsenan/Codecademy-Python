@@ -17,6 +17,14 @@ def count_multi_char_x(word, x):
   splits = word.split(x)
   return(len(splits)-1)
 
+def substring_between_letters(word, start, end):
+  if start in word and end in word:
+    start_index = word.find(start)
+    end_index = word.find(end)
+    return word[start_index + 1: end_index]
+  else:
+    return word
+
 #print(unique_english_letters("mississippi"))
 # should print 4
 #print(unique_english_letters("Apple"))
@@ -27,7 +35,12 @@ def count_multi_char_x(word, x):
 #print(count_char_x("mississippi", "m"))
 # should print 1
 
-print(count_multi_char_x("mississippi", "iss"))
+#print(count_multi_char_x("mississippi", "iss"))
 # should print 2
-print(count_multi_char_x("apple", "pp"))
+#print(count_multi_char_x("apple", "pp"))
 # should print 1
+
+print(substring_between_letters("apple", "p", "e"))
+# should print "pl"
+print(substring_between_letters("apple", "p", "c"))
+# should print "apple"
