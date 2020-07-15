@@ -63,6 +63,14 @@ def make_spoonerism(word1, word2):
   spoonerism = word1 + " " + word2
   return spoonerism
 
+def add_exclamation(word):
+  if len(word) >= 20:
+    return word
+  else:
+    while len(word) < 20:
+      word += "!"
+  return word
+
 #print(unique_english_letters("mississippi"))
 # should print 4
 #print(unique_english_letters("Apple"))
