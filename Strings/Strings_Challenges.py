@@ -49,6 +49,11 @@ def every_other_letter(word):
     every_other += word[i]
   return every_other
 
+def reverse_string(word):
+  word_reversed = ""
+  for i in range(len(word)):
+    word_reversed += word[len(word) - i - 1]
+  return word_reversed
 
 #print(unique_english_letters("mississippi"))
 # should print 4
@@ -88,3 +93,10 @@ print(every_other_letter("Hello world!"))
 # should print Hlowrd
 print(every_other_letter(""))
 # should print 
+
+print(reverse_string("Codecademy"))
+# should print ymedacedoC
+print(reverse_string("Hello world!"))
+# should print !dlrow olleH
+print(reverse_string(""))
+# should print
