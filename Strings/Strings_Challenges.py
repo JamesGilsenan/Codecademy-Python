@@ -25,6 +25,15 @@ def substring_between_letters(word, start, end):
   else:
     return word
 
+def x_length_words(sentence, x):
+  words = sentence.split()
+  print(words)
+  for word in words:
+    if len(word) >= x:
+      return True
+    else:
+      return False
+
 #print(unique_english_letters("mississippi"))
 # should print 4
 #print(unique_english_letters("Apple"))
@@ -40,7 +49,12 @@ def substring_between_letters(word, start, end):
 #print(count_multi_char_x("apple", "pp"))
 # should print 1
 
-print(substring_between_letters("apple", "p", "e"))
+#print(substring_between_letters("apple", "p", "e"))
 # should print "pl"
-print(substring_between_letters("apple", "p", "c"))
+#print(substring_between_letters("apple", "p", "c"))
 # should print "apple"
+
+print(x_length_words("i like apples", 2))
+# should print False
+print(x_length_words("he likes apples", 2))
+# should print True
