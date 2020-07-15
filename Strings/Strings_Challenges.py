@@ -13,12 +13,21 @@ def count_char_x(word, x):
       count_x += 1
   return count_x
 
-print(unique_english_letters("mississippi"))
+def count_multi_char_x(word, x):
+  splits = word.split(x)
+  return(len(splits)-1)
+
+#print(unique_english_letters("mississippi"))
 # should print 4
-print(unique_english_letters("Apple"))
+#print(unique_english_letters("Apple"))
 # should print 4
 
-print(count_char_x("mississippi", "s"))
+#print(count_char_x("mississippi", "s"))
 # should print 4
-print(count_char_x("mississippi", "m"))
+#print(count_char_x("mississippi", "m"))
+# should print 1
+
+print(count_multi_char_x("mississippi", "iss"))
+# should print 2
+print(count_multi_char_x("apple", "pp"))
 # should print 1
