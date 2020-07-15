@@ -34,6 +34,15 @@ def x_length_words(sentence, x):
     else:
       return False
 
+def check_for_name(sentence, name):
+  words = sentence.split()
+  print(words)
+  for word in words:
+    if name.upper() in sentence.upper() or name.lower() in sentence.lower():
+      return True
+    else:
+      return False
+
 #print(unique_english_letters("mississippi"))
 # should print 4
 #print(unique_english_letters("Apple"))
@@ -54,7 +63,14 @@ def x_length_words(sentence, x):
 #print(substring_between_letters("apple", "p", "c"))
 # should print "apple"
 
-print(x_length_words("i like apples", 2))
+#print(x_length_words("i like apples", 2))
 # should print False
-print(x_length_words("he likes apples", 2))
+#print(x_length_words("he likes apples", 2))
 # should print True
+
+print(check_for_name("My name is Jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is jamie", "Jamie"))
+# should print True
+print(check_for_name("My name is Samantha", "Jamie"))
+# should print False
