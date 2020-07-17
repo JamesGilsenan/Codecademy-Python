@@ -37,7 +37,7 @@ def brute_force_caeser(message):
                 decrypted_message += letter
         print("\nOffset = " + str(offset) + " - " + decrypted_message) 
 
-def decrypt_vigenère(message, keyword):
+def decrypt_vigenère_message(message, keyword):
     punctuation = "!?.,' "
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     decrypted_message = ""
@@ -50,17 +50,41 @@ def decrypt_vigenère(message, keyword):
 
             letter_value = alphabet.find(message[i])
             key_value = alphabet.find(keyphrase[i])
-            decrypted_message += alphabet[letter_value - key_value]
+            decrypted_message += alphabet[(letter_value - key_value) % 26]
         else:
             keyphrase += message[i]
             decrypted_message += message[i]
     print(keyphrase)
     return decrypted_message
 
+def encrypt_vigenère_message(message, keyword):
+    punctuation = "!?.,' "
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    encrypted_message = ""
+    keyphrase = ""
+    index = 0
+    for i in range(len(message)):
+        if not message[i] in punctuation:
+            keyphrase += keyword[index % len(keyword)]
+            index += 1
+
+            print("i = " + str(i))
+            letter_value = alphabet.find(message[i])
+            print("letter value = " + message[letter_value])
+            key_value = alphabet.find(keyphrase[i])
+            encrypted_message += alphabet[(letter_value + key_value) % 26]
+        else:
+            keyphrase += message[i]
+            encrypted_message += message[i]
+    print(keyphrase)
+    return encrypted_message
+    
 
 #print(decrypt_caeser_message("xuo jxuhu! jxyi yi qd unqcfbu ev q squiqh syfxuh. muhu oek qrbu je tusetu yj? y xefu ie! iudt cu q cuiiqwu rqsa myjx jxu iqcu evviuj!", 10))
 #print(encrypt_caeser_message("hey there! I have decrypted your message. This Caeser Cipher is really cool!", 10))
 #print(decrypt_caeser_message("jxu evviuj veh jxu iusedt cuiiqwu yi vekhjuud.", 10))
 #print(decrypt_caeser_message("bqdradyuzs ygxfubxq omqemd oubtqde fa oapq kagd yqeemsqe ue qhqz yadq eqogdq!", 14))
 #brute_force_caeser("vhfinmxkl atox kxgwxkxw tee hy maxlx hew vbiaxkl tl hulhexmx. px'ee atox mh kxteer lmxi ni hnk ztfx by px ptgm mh dxxi hnk fxlltzxl ltyx.")
-print(decrypt_vigenère("dfc aruw fsti gr vjtwhr wznj? vmph otis! cbx swv jipreneo uhllj kpi rahjib eg fjdkwkedhmp!", "friends"))
+#print(decrypt_vigenère("dfc aruw fsti gr vjtwhr wznj? vmph otis! cbx swv jipreneo uhllj kpi rahjib eg fjdkwkedhmp!", "friends"))
+#print(encrypt_vigenère_message("that was a tough one to crack. but i am enjoying this cryptogrophy!", "milo"))
+print(decrypt_vigenère_message("fplh iid o fwfut wys fw nfmkv. pgb t oy myxagtbs bswe kcmbbzudwavk!", "milo"))
