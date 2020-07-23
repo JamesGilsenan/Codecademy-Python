@@ -17,12 +17,22 @@ def add_ten(my_dictionary):
     return my_dictionary
 
 def values_that_are_keys(my_dictionary):
-  matches = []
-  for key in my_dictionary:
-    for value in my_dictionary.values():
-      if value == key:
-        matches.append(value)
-  return matches
+    matches = []
+    for key in my_dictionary:
+        for value in my_dictionary.values():
+            if value == key:
+                matches.append(value)
+    return matches
+
+def max_key(my_dictionary):
+    largest_value = float("-inf")
+    largest_key = ""
+    for key, value in my_dictionary.items():
+        if value > largest_value:
+            largest_value = value
+            largest_key = key
+    return largest_key
+
 
 print(sum_values({"milk":5, "eggs":2, "flour": 3}))
 # should print 10
@@ -43,3 +53,8 @@ print(values_that_are_keys({1:100, 2:1, 3:4, 4:10}))
 # should print [1, 4]
 print(values_that_are_keys({"a":"apple", "b":"a", "c":100}))
 # should print ["a"]
+
+print(max_key({1:100, 2:1, 3:4, 4:10}))
+# should print 1
+print(max_key({"a":100, "b":10, "c":1000}))
+# should print "c"
