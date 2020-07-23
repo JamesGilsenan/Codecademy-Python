@@ -33,6 +33,13 @@ def max_key(my_dictionary):
             largest_key = key
     return largest_key
 
+def word_length_dictionary(words):
+    word_lengths = []
+    for word in words:
+        word_lengths.append(len(word))
+    words_dictionary = {key:value for key, value in zip(words, word_lengths)}
+    return words_dictionary
+
 
 print(sum_values({"milk":5, "eggs":2, "flour": 3}))
 # should print 10
@@ -58,3 +65,8 @@ print(max_key({1:100, 2:1, 3:4, 4:10}))
 # should print 1
 print(max_key({"a":100, "b":10, "c":1000}))
 # should print "c"
+
+print(word_length_dictionary(["apple", "dog", "cat"]))
+# should print {"apple":5, "dog": 3, "cat":3}
+print(word_length_dictionary(["a", ""]))
+# should print {"a": 1, "": 0}
