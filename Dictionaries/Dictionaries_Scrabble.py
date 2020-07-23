@@ -5,12 +5,12 @@ def score_word(word, dictionary):
     score = 0
     word = word.upper()
     for letter in word:
-        score += dictionary[letter]
-        #print("Letter: " + letter + " = " + str(dictionary[letter]) + " points")
+        score += dictionary.get(letter, 0)
+        #print("Letter: " + letter + " = " + str(dictionary.get(letter, 0)) + " points")
     #print("Word: " + word + " = " + str(score) + " points")
     return score
 
 letter_to_points = {key:value for key, value in zip(letters, points)}
 letter_to_points[" "] = 0
 print(letter_to_points)
-print(score_word("hello", letter_to_points))
+print(score_word("hello?!", letter_to_points))
