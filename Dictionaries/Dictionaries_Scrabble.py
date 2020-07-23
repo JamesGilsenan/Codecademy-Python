@@ -13,4 +13,9 @@ def score_word(word, dictionary):
 letter_to_points = {key:value for key, value in zip(letters, points)}
 letter_to_points[" "] = 0
 print(letter_to_points)
-print(score_word("hello?!", letter_to_points))
+brownie_points = score_word("brownie", letter_to_points)
+print(brownie_points)
+
+player_to_words = {"player1": ["BLUE", "TENNIS", "EXIT"], "wordNerd": ["EARTH", "EYES", "MACHINE"],
+ "Lexi Con": ["ERASER", "BELLY", "HUSKY"], "Prof Reader": ["ZAP", "COMA", "PERIOD"]}
+ 
