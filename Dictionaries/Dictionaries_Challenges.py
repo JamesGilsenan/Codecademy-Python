@@ -48,6 +48,15 @@ def frequency_dictionary(words):
         word_frequency[word] = count + 1
     return word_frequency
 
+def unique_values(my_dictionary):
+    seen_values = []
+    for value in my_dictionary.values():
+        if seen_values.count(value) == 0:
+            seen_values.append(value)
+        else:
+            print("Value: " + value + " has already been counted")
+    return len(seen_values)
+
 
 #print(sum_values({"milk":5, "eggs":2, "flour": 3}))
 # should print 10
@@ -79,7 +88,12 @@ def frequency_dictionary(words):
 #print(word_length_dictionary(["a", ""]))
 # should print {"a": 1, "": 0}
 
-print(frequency_dictionary(["apple", "apple", "cat", 1]))
+#print(frequency_dictionary(["apple", "apple", "cat", 1]))
 # should print {"apple":2, "cat":1, 1:1}
-print(frequency_dictionary([0,0,0,0,0]))
+#print(frequency_dictionary([0,0,0,0,0]))
 # should print {0:5}
+
+print(unique_values({0:3, 1:1, 4:1, 5:3}))
+# should print 2
+print(unique_values({0:3, 1:3, 4:3, 5:3}))
+# should print 1
