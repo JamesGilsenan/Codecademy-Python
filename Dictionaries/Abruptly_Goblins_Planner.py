@@ -22,8 +22,16 @@ def find_best_night(availability_table):
     for day, availability in availability_table.items():
         if availability > best_availability:
             best_availability = availability
-            best_day = day
-    return best_day
+            best_night = day
+    return best_night
+
+def available_on_night(gamers_list, day):
+    available_to_play = []
+    for gamer in gamers_list:
+        for day in gamer["availability"]:
+            if day == best_night:
+                available_to_play.append(gamer["name"])
+    return available_to_play
 
 
 
@@ -44,4 +52,8 @@ count_availability = build_daily_frequency_table()
 count_availability = calculate_availability(gamers, count_availability)
 print(count_availability)
 
-print(find_best_night(count_availability))
+best_night = find_best_night(count_availability)
+print(best_night)
+
+attending_game_night = available_on_night(gamers, best_night)
+print(attending_game_night)
