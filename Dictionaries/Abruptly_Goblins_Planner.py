@@ -1,4 +1,5 @@
 gamers = []
+unable_to_attend_best_game_night = []
 
 def add_gamer(gamer, gamers_list):
     if gamer.get("name") and gamer.get("availability"):
@@ -25,7 +26,7 @@ def find_best_night(availability_table):
             best_night = day
     return best_night
 
-def available_on_night(gamers_list, day):
+def available_on_night(gamers_list, game_night):
     available_to_play = []
     for gamer in gamers_list:
         for day in gamer["availability"]:
@@ -53,13 +54,13 @@ add_gamer({'name':'Michel Trujillo','availability': ["Monday", "Tuesday", "Wedne
 
 count_availability = build_daily_frequency_table()
 count_availability = calculate_availability(gamers, count_availability)
-print(count_availability)
+#print(count_availability)
 
 game_night = find_best_night(count_availability)
-print(game_night)
+#print(game_night)
 
 attending_game_night = available_on_night(gamers, game_night)
-print(attending_game_night)
+#print(attending_game_night)
 
 form_email = """
     Dear {name},
@@ -69,4 +70,21 @@ form_email = """
     Yours Sincerely
     Merlin"""
 
-send_email(attending_game_night, game_night, "Abruptly Goblins!")
+#send_email(attending_game_night, game_night, "Abruptly Goblins!")
+
+#Set up second game night for other players
+for gamer in gamers:
+    if gamer["name"] in attending_game_night:
+        #print(str(gamer["name"]) + " is attending the game night on " + game_night)
+        print()
+    else:
+        add_gamer(gamer, unable_to_attend_best_game_night)
+print(unable_to_attend_best_game_night)
+second_night_availability = build_daily_frequency_table()
+second_night_availability = calculate_availability(unable_to_attend_best_game_night, second_night_availability)
+print(second_night_availability)
+second_game_night = find_best_night(second_night_availability)
+print(second_game_night)
+available_second_game_night = available_on_night(unable_to_attend_best_game_night, second_game_night)
+print(available_second_game_night)
+send_email(available_second_game_night, second_game_night, "Dungeons and Dragons")
