@@ -10,7 +10,7 @@ with open("passwords.csv") as password_file:
 
 with open("compromised_users", "w") as compromised_user_file:
     for user in compromised_users:
-        compromised_user_file.write(user)
+        compromised_user_file.write(user + "\n")
 
 with open("boss_message.json", "w") as boss_message:
     boss_message_dict = {"recipient": "The Boss", "message": "Mission Success"}
