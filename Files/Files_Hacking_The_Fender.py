@@ -8,4 +8,5 @@ with open("passwords.csv") as password_file:
     print(compromised_users)
 
 with open("compromised_users", "w") as compromised_user_file:
-    
+    for user in compromised_users:
+        compromised_user_file.write(user)
