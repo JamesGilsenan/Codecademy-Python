@@ -14,4 +14,4 @@ with open("compromised_users", "w") as compromised_user_file:
 
 with open("boss_message.json", "w") as boss_message:
     boss_message_dict = {"recipient": "The Boss", "message": "Mission Success"}
-    
+    json.dump(boss_message_dict, boss_message)
