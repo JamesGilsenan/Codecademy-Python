@@ -6,3 +6,6 @@ with open("passwords.csv") as password_file:
     for password_row in password_csv:
         compromised_users.append(password_row["Username"])
     print(compromised_users)
+
+with open("compromised_users", "w") as compromised_user_file:
+    
