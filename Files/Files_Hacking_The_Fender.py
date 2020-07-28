@@ -13,4 +13,5 @@ with open("compromised_users", "w") as compromised_user_file:
         compromised_user_file.write(user)
 
 with open("boss_message.json", "w") as boss_message:
+    boss_message_dict = {"recipient": "The Boss", "message": "Mission Success"}
     
