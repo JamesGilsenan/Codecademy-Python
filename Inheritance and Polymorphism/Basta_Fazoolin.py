@@ -20,6 +20,9 @@ class Franchise():
         self.address = address
         self.menus = menus
 
+    def __repr__(self):
+        return self.address
+
 
 brunch = Menu("Brunch", {'pancakes': 7.50, 'waffles': 9.00, 'burger': 11.00, 'home fries': 4.50, 'coffee': 1.50, 'espresso': 3.00, 'tea': 1.00, 'mimosa': 10.50, 'orange juice': 3.50}
 , "11am", "4pm")
@@ -32,8 +35,10 @@ kids = Menu("Kids", {'chicken nuggets': 6.50, 'fusilli with wild mushrooms': 12.
 flagship_store = Franchise("1232 West End Road", [brunch, early_bird, dinner, kids])
 new_installment = Franchise("12 East Mulberry Street", [brunch, early_bird, dinner, kids])
 
-print(brunch)
-print(early_bird)
-print(kids)
-print(brunch.calcculate_bill(["pancakes", "home fries", "coffee"]))
-print(early_bird.calcculate_bill(["salumeria plate", "mushroom ravioli (vegan)"]))
+#print(brunch)
+#print(early_bird)
+#print(kids)
+#print(brunch.calcculate_bill(["pancakes", "home fries", "coffee"]))
+#print(early_bird.calcculate_bill(["salumeria plate", "mushroom ravioli (vegan)"]))
+
+print(flagship_store)
