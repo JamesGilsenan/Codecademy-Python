@@ -45,10 +45,15 @@ early_bird = Menu("Early Bird", {'salumeria plate': 8.00, 'salad and breadsticks
 dinner = Menu("Dinner", {'crostini with eggplant caponata': 13.00, 'ceaser salad': 16.00, 'pizza with quattro formaggi': 11.00, 'duck ragu': 19.50, 'mushroom ravioli (vegan)': 13.50, 
 'coffee': 2.00, 'espresso': 3.00,}, 1700, 2300)
 kids = Menu("Kids", {'chicken nuggets': 6.50, 'fusilli with wild mushrooms': 12.00, 'apple juice': 3.00}, 1100, 2100)
+arepas_menu = Menu("Take a Arepa", {'arepa pabellon': 7.00, 'pernil arepa': 8.50, 'guayanes arepa': 8.00, 'jamon arepa': 7.50}, 1000, 2000)
 menus = [brunch, early_bird, dinner, kids]
 
 flagship_store = Franchise("1232 West End Road", menus)
 new_installment = Franchise("12 East Mulberry Street", menus)
+arepas_place = Franchise("189 Fitzgerald Avenue", [arepas_menu])
+
+my_business = Business("Basta Fazoolin\' with my Heart", [flagship_store, new_installment])
+arepa_business = Business("Take a' Arepa", [arepas_place])
 
 #print(brunch)
 #print(early_bird)
