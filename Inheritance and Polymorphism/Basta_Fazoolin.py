@@ -7,7 +7,7 @@ class Menu:
         self.end_time = end_time
 
     def __repr__(self):
-metho        return "The {} Menu is available from {} to {}".format(self.name, self.start_time, self.end_time)
+        return "The {} Menu is available from {} to {}".format(self.name, self.start_time, self.end_time)
 
     def calcculate_bill(self, purchased_items):
         total = 0
@@ -25,3 +25,4 @@ print(brunch)
 print(early_bird)
 print(kids)
 print(brunch.calcculate_bill(["pancakes", "home fries", "coffee"]))
+print(early_bird.calcculate_bill(["salumeria plate", "mushroom ravioli (vegan)"]))
