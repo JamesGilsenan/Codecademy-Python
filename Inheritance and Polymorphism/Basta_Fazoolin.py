@@ -3,6 +3,9 @@ class Business():
         self.name = name
         self.franchises = franchises
 
+    def __repr__(self):
+        return self.name
+
 
 class Franchise():
     def __init__(self, address, menus):
@@ -61,6 +64,9 @@ arepa_business = Business("Take a' Arepa", [arepas_place])
 #print(brunch.calcculate_bill(["pancakes", "home fries", "coffee"]))
 #print(early_bird.calcculate_bill(["salumeria plate", "mushroom ravioli (vegan)"]))
 
-print(flagship_store)
+#print(flagship_store)
 print(flagship_store.available_menus(1200))
 print(new_installment.available_menus(1700))
+
+print(my_business)
+print(arepa_business)
