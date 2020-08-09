@@ -25,6 +25,10 @@ def calculate_driver_cost(distance, *drivers):
             cheapest_driver_price = price_for_driver
     return cheapest_driver_price, cheapest_driver
 
+def calculate_money_made(**trips):
+    total_moeny_made = 0
+    #for trip_id, trip in trips.items():
+
 
 #print(calculate_shipping_cost([50.8375054, 0.1762299], [53.5586526, 9.6476359], "Ground"))
 test_function(calculate_shipping_cost)
