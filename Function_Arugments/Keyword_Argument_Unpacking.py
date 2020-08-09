@@ -1,7 +1,7 @@
 print("My name is {name} and I'm feeling {feeling}.".format(name="Yon Lad", feeling="Yabadabadoo"))
 
 # Checkpoint 2
-from products import create_product
+from Products import create_product
 
 def create_products(**products_dict):
   for name, price in products_dict.items():

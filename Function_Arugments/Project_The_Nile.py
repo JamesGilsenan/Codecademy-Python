@@ -1,6 +1,7 @@
 from Nile import get_distance, format_price, SHIPPING_PRICES
 from Test import test_function
 from Test import Driver
+from Test import Trip
 
 def calculate_shipping_cost(from_coords, to_coords, shipping_type="Overnight"):
     from_long, from_lat = from_coords
@@ -26,14 +27,20 @@ def calculate_driver_cost(distance, *drivers):
     return cheapest_driver_price, cheapest_driver
 
 def calculate_money_made(**trips):
-    total_moeny_made = 0
-    #for trip_id, trip in trips.items():
-
+    total_money_made = 0
+    for trip_id, trip in trips.items():
+        trip_revenue = trip.cost - trip.driver.cost
+        total_money_made += trip_revenue
+    return total_money_made
 
 #print(calculate_shipping_cost([50.8375054, 0.1762299], [53.5586526, 9.6476359], "Ground"))
-test_function(calculate_shipping_cost)
+#test_function(calculate_shipping_cost)
+#test_function(calculate_driver_cost)
+#test_function(calculate_money_made)
 driver1 = Driver(2, 10)
 driver2 = Driver(7, 20)
 driver3 = Driver(5, 18)
-print(calculate_driver_cost(100, driver1, driver2, driver3))
-test_function(calculate_driver_cost)
+#print(calculate_driver_cost(100, driver1, driver2, driver3))
+trip1 = Trip(200, driver1, 15)
+trip2 = Trip(300, driver2, 40)
+print(calculate_money_made(trip1=trip1,trip2=trip2))
