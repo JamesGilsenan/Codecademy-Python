@@ -6,8 +6,10 @@ def calculate_shipping_cost(from_coords, to_coords, shipping_type):
     to_long, to_lat = to_coords
     #distance = get_distance(*from_coords, *to_coords) also unpacks variables and works the same as line below
     distance = get_distance(from_lat, from_long, to_lat, to_long)
-    print(distance)
+    shipping_rate = SHIPPING_PRICES.get(shipping_type)
+    price = distance * shipping_rate
+    return format_price(price)
 
 
 
-calculate_shipping_cost([1.147865, 4.578456], [1.56843, 2.84384], "Steam")
+print(calculate_shipping_cost([50.8375054, 0.1762299], [53.5586526, 9.6476359], "Ground"))
