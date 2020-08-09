@@ -10,6 +10,11 @@ def calculate_shipping_cost(from_coords, to_coords, shipping_type="Overnight"):
     price = distance * shipping_rate
     return format_price(price)
 
+def calculate_driver_cost(distance, *drivers):
+    cheapest_driver = None
+    cheapest_driver_price = None
+
+
 
 #print(calculate_shipping_cost([50.8375054, 0.1762299], [53.5586526, 9.6476359], "Ground"))
 test_function(calculate_shipping_cost)
