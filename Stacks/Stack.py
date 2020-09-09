@@ -44,10 +44,4 @@ class Stack:
         Testing for equality happensin constant time.
         """
         return self.items == []
-
-my_stack = Stack()
-my_stack.push("apple")
-print(my_stack.items)
-my_stack.push("banana")
-my_stack.push("carrat")
-print(my_stack.items)
+        
