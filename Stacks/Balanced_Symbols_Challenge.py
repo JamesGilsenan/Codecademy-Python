@@ -2,8 +2,6 @@
 #if the symbols are not balanced, return false. The solution should use a stack
 from stack import Stack
 
-
-
 def is_balanced(input):
     opener_symbols = ["(", "{", "["]
     closer_symbols = [")", "}", "]"]
