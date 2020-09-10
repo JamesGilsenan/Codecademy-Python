@@ -4,6 +4,7 @@
 #Job class - print_page() function that decrements pages. check_complete() checks all pages are printed.
 #Printer class - get_job() function that uses dequeue to take 1st job in print queue off of the queue. 
 #                Account for get_job() having no jobs
+import random
 
 class PrintQueue():
     def __init__(self):
@@ -30,8 +31,8 @@ class PrintQueue():
 
 
 class Job:
-    def __init__(self, pages):
-        self.pages = pages
+    def __init__(self):
+        self.pages = random.randint(1, 10)
 
     def __repr__(self):
         return str(self.pages)
@@ -39,7 +40,7 @@ class Job:
     def print_pages(self):
         while self.pages:
             self.pages -= 1 
-            print("Printing page... {total_pg} remaining".format(total_pg = self.pages))
+            print("Printing page...   {total_pg} remaining".format(total_pg = self.pages))
         self.check_complete()
 
     def check_complete(self):
@@ -54,16 +55,15 @@ class Printer:
         print(q.items)
         while q.items:
             next_job = q.peek()
-            print(next_job)
             Job.print_pages(next_job)
             q.dequeue()
         print("All jobs are complete")
 
 print_q = PrintQueue()
 printer = Printer()
-job_1 = Job(5)
-job_2 = Job(3)
-job_3 = Job(1) 
+job_1 = Job()
+job_2 = Job()
+job_3 = Job() 
 print_q.enqueue(job_1)
 print_q.enqueue(job_2)
 print_q.enqueue(job_3)
