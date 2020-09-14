@@ -26,7 +26,7 @@ class Deque:
     def size(self):
         if self.items:
             return len(self.items)
-        return None
+        return 0
 
     def __repr__(self):
         return "Object : {}".format(self.items)
@@ -36,19 +36,3 @@ class Deque:
 
     def peek_rear(self):
         return self.items[0]
-
-deque = Deque()
-deque.add_front(1)
-deque.add_front(2)
-deque.add_rear(3)
-print(deque.size())
-print(deque)
-print(deque.peek_front())
-print(deque.peek_rear())
-deque.remove_rear()
-print(deque)
-deque.remove_front()
-print(deque)
-deque.remove_front()
-print(deque.is_empty())
-print(deque.size()
