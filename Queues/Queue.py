@@ -1,3 +1,5 @@
+#FIFO - First in forst out. E.G. people queuing to use an ATM. First person in the queue 
+#will be the first person to use the ATM and leave the queue. New people will join the start of the queue
 class Queue:
 
     def __init__(self):
