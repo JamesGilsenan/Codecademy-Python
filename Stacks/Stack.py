@@ -1,3 +1,5 @@
+#LIFO - Last in first out. E.G. A stack of books. A new book will be added to the top of the stack.
+#Removing a book will remove the book at the top of the stack.
 class Stack:
 
     def __init__(self):
