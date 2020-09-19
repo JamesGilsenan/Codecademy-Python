@@ -5,25 +5,41 @@ class Node:
         self.next = None
         self.position = position
 
+    def __repr__(self):
+        return self.data
+
 
 class LinkedList:
 
     def __init__(self):
         self.head = None
 
-    def __repr__(self):
+    def __str__(self):
+        current_node = self.head
+        string = "["
         if self.head is None:
             return "Linked List is empty"
-        current_node = self.head
-        while True:
-            if current_node is None:
-                break
-            print(current_node.data)
+        while current_node is not None:
+            string += str(current_node.data)
+            if current_node.next is not None:
+                string += ", "
             current_node = current_node.next
-        return ""
+        string += "]"
+        return string
 
-    def get(self):
-        pass
+    def get(self, index):
+        if index > self.size() - 1:
+            raise IndexError("List index is out of range")
+        current = self.head
+        count = 0
+        found = False
+        while current is not None and not found:
+            if count == index:
+                found = True
+            else:
+                current = current.next
+                count += 1
+        return current.data
 
     def add_at_head(self, new_node):
         if self.head is None:
@@ -56,15 +72,32 @@ class LinkedList:
                 previous = current
                 current = current.next
                 count += 1
-            if previous is None:
-                temp.next = self.head
-                self.head = temp
-            else:
-                temp.next = current
-                previous.next = temp
+        if previous is None:
+            temp.next = self.head
+            self.head = temp
+        else:
+            temp.next = current
+            previous.next = temp
 
-    def delete_at_index(self):
-        pass
+    def delete_at_index(self, index):
+        if index > self.size() - 1:
+            raise IndexError("List index out of range")
+        current = self.head
+        previous = None
+        count = 0
+        found = False
+        while current is not None and not found:
+            if count == index:
+                found = True
+            else:
+                previous = current
+                current = current.next
+                count += 1
+        if previous is None:
+            self.head = current.next
+        else:
+            previous.next = current.next
+
 
     def size(self):
         count = 0
@@ -79,18 +112,17 @@ class LinkedList:
 
 
 first_node = Node("John")
-linked_list = LinkedList()
-linked_list.add_at_head(first_node)
-#print(linked_list)
 second_node = Node("Ben")
-linked_list.add_at_head(second_node)
-#print(linked_list)
 third_node = Node("Paddy")
+fourth_node = Node("Lad")
+linked_list = LinkedList()
+
+linked_list.add_at_head(first_node)
+linked_list.add_at_head(second_node)
 linked_list.add_at_tail(third_node)
 #print(linked_list)
-fourth_node = Node("Lad")
-#linked_list.add_at_head(fourth_node)
-linked_list.add_at_index(10, fourth_node)
+#linked_list.add_at_index(3, fourth_node)
+#linked_list.delete_at_index(3)
+print(linked_list.get(2))
 print(linked_list)
-#print(linked_list.size())
-#print(linked_list.index("Paddy"))
+print(linked_list.size())

@@ -57,16 +57,6 @@ class LinkedList:
     def size(self):     #This is O(1)
         return self.length
 
-    def search(self, item):
-        current = self.head
-        found = False
-        while current is not None and not found:
-            if current.get_data() == item:
-                found = True
-            else:
-                current = current.get_next()
-        return found
-
     def remove(self, item):
         current = self.head
         previous = None
@@ -183,7 +173,6 @@ linked_list.add(third_node)
 print(linked_list)
 #print(linked_list.is_empty())
 #print(linked_list.ssize())
-#print(linked_list.search(third_node))
 #linked_list.remove(third_node)
 #linked_list.append(third_node)
 #linked_list.insert(2, fourth_node)
