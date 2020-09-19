@@ -51,6 +51,8 @@ class LinkedList:
     
     def add_at_tail(self, new_node):
         last_node = self.head
+        if self.head is None:
+            self.head = new_node
         while True:
             if last_node.next == None:
                 break
@@ -109,8 +111,7 @@ class LinkedList:
             count += 1
 
         
-
-
+"""
 first_node = Node("John")
 second_node = Node("Ben")
 third_node = Node("Paddy")
@@ -126,3 +127,4 @@ linked_list.add_at_tail(third_node)
 print(linked_list.get(2))
 print(linked_list)
 print(linked_list.size())
+"""
