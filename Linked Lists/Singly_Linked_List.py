@@ -6,7 +6,7 @@ class Node:
         self.position = position
 
     def __repr__(self):
-        return self.data
+        return str(self.data)
 
 
 class LinkedList:
@@ -53,6 +53,7 @@ class LinkedList:
         last_node = self.head
         if self.head is None:
             self.head = new_node
+            return
         while True:
             if last_node.next == None:
                 break
