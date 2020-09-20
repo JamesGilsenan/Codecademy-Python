@@ -53,6 +53,7 @@ class LinkedList:
         last_node = self.head
         if self.head is None:
             self.head = new_node
+            return
         while True:
             if last_node.next == None:
                 break
