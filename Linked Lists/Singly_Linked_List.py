@@ -6,7 +6,7 @@ class Node:
         self.position = position
 
     def __repr__(self):
-        return self.data
+        return str(self.data)
 
 
 class LinkedList:
