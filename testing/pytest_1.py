@@ -10,4 +10,13 @@ def total(xs: [float]) -> float :
     return result
 
 
+def join(xs: [int], delimiter: str) -> str:
+    """Produce a string where subsquent items are seperated by delimiter"""
+    result = ""
 
+    for x in xs:
+        if result == "": # Don't put delimiter before first value
+            result = str(x)
+        else:
+            result += delimiter + str(x)
+    return result
